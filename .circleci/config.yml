@@ -25,6 +25,7 @@ jobs:
           if [ ! -z "$CIRCLE_PULL_REQUEST" ]; then
             if [ ! -f "RELEASE.md" ]; then
               echo "For a pull request to be merged, a RELEASE.md is needed!"
+              exit 1
             fi
           fi
 
