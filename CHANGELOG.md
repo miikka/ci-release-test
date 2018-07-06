@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.1 (2018-07-06)
+
+Okay, here's a RELEASE.md.
+
 ## 0.3.0 (2018-07-06)
 
 Okay, let's trigger a minor release.
