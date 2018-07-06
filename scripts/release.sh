@@ -13,7 +13,7 @@ NEW_VERSION=$(lein run -m release.changelog)
 sed -i.sedbak "s/defproject \([[:graph:]]*\) \".*\"/defproject \1 \"$NEW_VERSION-SNAPSHOT\"/" project.clj
 rm -f project.clj.sedbak
 
-git add version.edn CHANGELOG.md
+git add version.edn CHANGELOG.md project.clj
 git rm RELEASE.md
 git commit -m "Release notes for $NEW_VERSION [skip ci]"
 
