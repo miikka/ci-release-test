@@ -23,6 +23,9 @@ jobs:
       - checkout
       - restore_cache:
           key: v1-{{checksum "project.clj"}}
+      - run: |
+          git config user.email "miikka.koskinen+ci@iki.fi"
+          git config user.name  "Build automation"
       - run: lein release
 
 workflows:
