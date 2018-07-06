@@ -1,4 +1,4 @@
-(defproject org.clojars.oispa/ci-release-test "0.3.0"
+(defproject org.clojars.oispa/ci-release-test "0.3.1-SNAPSHOT"
   :description "Experiments with release automation"
   :url "https://github.com/miikka/ci-release-test"
   :license {:name "Eclipse Public License"
