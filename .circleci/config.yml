@@ -43,6 +43,9 @@ jobs:
           ./scripts/decrypt-secrets.sh "$SECRETS_PASSPHRASE"
           gpg --import secrets/signing-key.asc
           mkdir -p ~/.lein && cp secrets/profiles.clj ~/.lein/
+      - add_ssh_keys:
+          fingerprints:
+            - "04:9b:a2:19:1a:5d:38:7e:df:3d:2b:8b:2a:0d:c5:50"
       - run: ./scripts/release.sh
 
 workflows:
