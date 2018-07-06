@@ -30,18 +30,18 @@ jobs:
           ./scripts/decrypt-secrets.sh "$SECRETS_PASSPHRASE"
           gpg --import secrets/signing-key.asc
           mkdir -p ~/.lein && cp secrets/profiles.clj ~/.lein/
-      - run: lein release
+      - run: ./scripts/release.sh
 
 workflows:
   version: 2
   test_and_release:
     jobs:
       - test
-      - request_release:
-          type: approval
-          requires:
-            - test
       - release:
           requires:
-            - request_release
+            - test
+          filters:
+            branches:
+              only:
+                - master
 
