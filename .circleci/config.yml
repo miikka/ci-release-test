@@ -29,6 +29,7 @@ jobs:
       - run: |
           ./scripts/decrypt-secrets.sh "$SECRETS_PASSPHRASE"
           gpg --import secrets/signing-key.asc
+          mkdir -p ~/.lein && cp secrets/profiles.clj ~/.lein/
       - run: lein release
 
 workflows:
