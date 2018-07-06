@@ -9,7 +9,7 @@ fi
 
 # Bump the changelog
 
-NEW_VERSION=$(clj -C:dev -m release.changelog)
+NEW_VERSION=$(lein run -m release.changelog)
 sed -i.sedbak "s/defproject \([[:graph:]]*\) \".*\"/defproject \1 \"$NEW_VERSION-SNAPSHOT\"/" project.clj
 rm -f project.clj.sedbak
 
