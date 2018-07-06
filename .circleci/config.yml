@@ -26,6 +26,9 @@ jobs:
       - run: |
           git config user.email "miikka.koskinen+ci@iki.fi"
           git config user.name  "Build automation"
+      - run: |
+          ./scripts/decrypt-secrets.sh "$SECRETS_PASSPHRASE"
+          gpg --import secrets/signing-key.asc
       - run: lein release
 
 workflows:
