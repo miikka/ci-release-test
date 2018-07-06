@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           key: v1-{{checksum "project.clj"}}
       - run: lein deps
-      - store_cache:
+      - save_cache:
           key: v1-{{checksum "project.clj"}}
           paths:
             - ~/.m2
