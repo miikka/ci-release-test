@@ -1,4 +1,5 @@
 # Change Log
+
 ## 0.3.0 (2018-07-06)
 
 Okay, let's trigger a minor release.
